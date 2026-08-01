@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "npm start",
-    "start": "concurrently --kill-others-on-fail --names stellar,vite -c gray,green --pad-prefix \"stellar scaffold watch --build-clients\" \"vite\"",
-    "build": "tsc -b && vite build",
+    "dev": "node init && npm start",
+    "start": "node init && concurrently --kill-others-on-fail --names stellar,vite -c gray,green --pad-prefix \"stellar scaffold watch --build-clients\" \"vite\"",
+    "build": "node init && tsc -b && vite build",
     "install:contracts": "npm install --workspace=packages && npm run build --workspace=packages",
     "contracts:bootstrap": "python3 scripts/local_contract_bootstrap.py",
     "contracts:bootstrap:dry-run": "python3 scripts/local_contract_bootstrap.py --dry-run",

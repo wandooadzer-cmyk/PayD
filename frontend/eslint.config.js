@@ -7,6 +7,9 @@ import reactX from 'eslint-plugin-react-x';
 import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
 import { globalIgnores } from 'eslint/config';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 export default tseslint.config(
   globalIgnores([
